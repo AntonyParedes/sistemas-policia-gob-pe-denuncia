@@ -26,10 +26,10 @@ export default function Home() {
 
   useEffect(() => {
     const now = new Date()
-    const formattedDate = `${String(now.getDate()).padStart(2, "0")}-${String(now.getMonth() + 1).padStart(
+    const formattedDate = `${String(now.getDate()).padStart(2, "0")}/${String(now.getMonth() + 1).padStart(
       2,
       "0",
-    )}-${now.getFullYear()} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(
+    )}/${now.getFullYear()} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(
       2,
       "0",
     )}:${String(now.getSeconds()).padStart(2, "0")} Hrs.`
@@ -44,7 +44,7 @@ export default function Home() {
     numeroOrden: "73794304",
     regionP: "REGPOL - AYACUCHO",
     comisaria: "DIVINCRI AYACUCHO",
-    numero: "2364",
+    numero: "73794304",
     fechaHecho: "02/05/2025 17:10 Hrs.",
     fechaRegistro: "03/05/2025 10:15 Hrs.",
     fechaConsulta: "03/05/2025 11:20 Hrs.",
@@ -52,7 +52,7 @@ export default function Home() {
     Provincia: "HUAMANGA",
     distrito: "AYACUCHO",
     lugar: "JR. SAN MARTIN 272 05003",
-    tipoRobo: "FUERO COMUN/PATRIMONIO (DELITO)",
+    tipoRobo: "PATRIMONIO (DELITO)",
     modalidadRobo: "ROBO",
     subtipoRobo: "ROBO AGRAVADO",
     nombresEdad: "FIDEL ANGEL CHIPANA BAUTISTA (21)",
@@ -156,20 +156,6 @@ export default function Home() {
               (LA POLICÍA NACIONAL DEL PERÚ, CERTIFICA QUE EN EL SISTEMA INFORMÁTICO DE
               <br />
               DENUNCIAS EXISTE UNA CUYO TENOR ES EL SIGUIENTE)
-            </p>
-            <p
-              style={{
-                fontStyle: "normal",
-                fontWeight: "normal",
-                fontSize: "9pt",
-                fontFamily: "Helvetica",
-                color: "#000000",
-                marginTop: "4px",
-                textAlign: "center",
-                padding: "0",
-              }}
-            >
-              Nro de Orden: {denunciaData.numeroOrden} - COPIA CERTIFICADA GRATUITA - D.L1246
             </p>
           </div>
 
@@ -313,7 +299,9 @@ export default function Home() {
                       </span>
                     </td>
                     <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}>
-                      <span style={{ display: "inline-block", width: "175px" }}>{denunciaData.fechaConsulta}</span>
+                      <span id="lblhoraemision" style={{ display: "inline-block", width: "175px" }}>
+                        {currentDate}
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -336,25 +324,8 @@ export default function Home() {
                     <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}>
                       <span style={{ display: "inline-block", width: "175px" }}>DENUNCIA</span>
                     </td>
-                    <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}>
-                      <span
-                        style={{
-                          fontStyle: "normal",
-                          fontWeight: "normal",
-                          fontSize: "8pt",
-                          fontFamily: "Helvetica",
-                          color: "rgb(7, 0, 103)",
-                          fontWeight: "bold",
-                          display: "inline-block",
-                          width: "100%",
-                        }}
-                      >
-                        FORMALIDAD:
-                      </span>
-                    </td>
-                    <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}>
-                      <span style={{ display: "inline-block", width: "175px" }}>VERBAL</span>
-                    </td>
+                    <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}></td>
+                    <td className="py-1 px-2" style={{ borderBottom: "1px solid transparent" }}></td>
                   </tr>
                 </tbody>
               </table>
